@@ -8,36 +8,3 @@
 @import "basics/helpers.scss";
 @import "basics/layout.scss";
 @import "basics/base.scss";
-
-// Components
-@import "components/app-header/app-header.scss";
-@import "components/stay-app/stay-list.scss";
-@import "components/stay-app/stay-preview.scss";
-@import "components/stay-app/type-of-place.scss";
-@import "components/stay-app/price-modal.scss";
-@import "components/stay-app/filter-bar.scss";
-@import "components/backoffice/stay-edit.scss";
-@import "components/backoffice/host-orders.scss";
-@import "components/backoffice/host-stays.scss";
-@import "components/backoffice/upload";
-@import "components/stay-map/stay-map.scss";
-@import "components/stay-details/stay-reserve.scss";
-@import "components/date-range/date-range";
-@import "components/dropdown-menu/dropdown-menu.scss";
-@import "components/guests-modal/guests-modal.scss";
-@import "components/loader/loader.scss";
-@import "components/app-footer/app-footer.scss";
-@import "components/add-review/add-review";
-@import "components/rate-star/rate-star";
-@import "components/review-preview/_review-preview.scss";
-@import "components/review-list/review-list.scss";
-
-// Pages
-
-@import "pages/stay-details.scss";
-@import "pages/home-page.scss";
-@import "pages/app-login/app-login.scss";
-@import "pages/orders-page/orders-page.scss";
-@import "pages/host-page.scss";
-@import "pages/wishlist.scss";
-@import "pages/admin-page.scss";
