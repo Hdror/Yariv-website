@@ -1,4 +1,3 @@
-import { hasPointerEvents } from "@testing-library/user-event/dist/utils"
 import { Link } from "react-router-dom"
 
 export function Header() {
