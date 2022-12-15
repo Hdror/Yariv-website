@@ -8,7 +8,7 @@ export function Header() {
                 <Link to='/' className="clean-link">
                     בית
                 </Link>
-                <Link to='/' className="clean-link">
+                <Link to='wedding' className="clean-link">
                     חתונות
                 </Link>
                 <Link to='/' className="clean-link">
