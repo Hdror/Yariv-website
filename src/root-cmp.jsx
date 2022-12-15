@@ -1,11 +1,17 @@
-import React from 'react';
 import { Routes, Route } from 'react-router'
-import { Header } from './cmps/header';
+import { Header } from './cmps/header'
 import routes from './routes'
-
+import { React, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 
 
 export const RootCmp = () => {
+
+    const routeLocation = useLocation()
+    useEffect(() => {
+        document.title = `YK-Photo-${routeLocation.pathname.substring(1,routeLocation.pathname.length)}`
+    }, [routeLocation.pathname])
+
     return (
         <>
             <Header />
