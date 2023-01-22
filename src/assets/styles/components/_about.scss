@@ -1,0 +1,10 @@
+article{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 40px;
+    gap: 20px;
+    .text-container{
+        color: white;
+    }
+}

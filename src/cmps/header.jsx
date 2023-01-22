@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export function Header() {
 
@@ -9,18 +9,26 @@ export function Header() {
                     <h1>LOGO</h1>
                 </div>
                 <div className="link-container">
-                    <Link to='home-page' className="clean-link">
+                    <NavLink to='home-page' className={({ isActive }) =>
+                        isActive ? "active clean-link" : "clean-link"}>
                         בית
-                    </Link>
-                    <Link to='wedding' className="clean-link">
+                        <div className="point"></div>
+                    </NavLink>
+                    <NavLink to='wedding' className={({ isActive }) =>
+                        isActive ? "active clean-link" : "clean-link"}>
                         חתונות
-                    </Link>
-                    <Link to='/' className="clean-link">
+                        <div className="point"></div>
+                    </NavLink>
+                    <NavLink to='/' className={({ isActive }) =>
+                        isActive ? "active clean-link" : "clean-link"}>
                         כנסים ואירועים
-                    </Link>
-                    <Link to='/' className="clean-link">
+                        <div className="point"></div>
+                    </NavLink>
+                    <NavLink to='/' className={({ isActive }) =>
+                        isActive ? "active clean-link" : "clean-link"}>
                         צור קשר
-                    </Link>
+                        <div className="point"></div>
+                    </NavLink>
                 </div>
             </section>
         </header >
