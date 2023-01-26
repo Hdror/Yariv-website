@@ -1,9 +1,8 @@
 .home-page{
-    // padding: 20px;
+    // padding: 20px
     .carousel-container{
-        width: 90%;
-        margin: 0 auto;
-        margin-bottom: 40px;
+        width: 100%;
+        min-height: 400px;
     }
     .images-container{
         padding: 24px;
@@ -31,4 +30,10 @@
     .css-1ps6pg7-MuiPaper-root {
         box-shadow: none;
     }
+    .css-1m9128y{
+        position: absolute;
+        bottom: 10px;
+        z-index: 3;
+    }
+  
 }

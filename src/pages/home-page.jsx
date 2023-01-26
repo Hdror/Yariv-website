@@ -10,17 +10,17 @@ export function HomePage() {
 
     const [imgs, setImages] = useState([]);
 
-    useEffect(() => {
-        (async () => {
-            // await getAllImages()
-            setImages(await getAllImages())
-        })()
-    }, [])
+    // useEffect(() => {
+    //     (async () => {
+    //         // await getAllImages()
+    //         setImages(await getAllImages())
+    //     })()
+    // }, [])
 
     return (<section className="home-page">
-        {!imgs.length &&
+        {/* {!imgs.length &&
             <img src={spinner} alt="" />
-        }
+        } */}
         <div className="carousel-container">
             <ImgCarousel />
         </div>

@@ -1,10 +1,35 @@
-import { Link, NavLink } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom"
+import { connect } from 'react-redux'
 
-export function Header() {
+import { toggleMiniHeader } from "../store/header/header.actions"
+
+
+export const _Header = (props) => {
+
+    const [isMiniHeader, setIsMiniHeader] = useState(false)
+    useEffect(() => {
+        window.addEventListener("scroll", checkScrollY)
+        return () => {
+            window.removeEventListener("scroll", checkScrollY); console.log('sdsds');
+        }
+    })
+
+    const checkScrollY = ({ target }) => {
+        const { scrollTop } = target.scrollingElement
+        if (scrollTop > 50 && isMiniHeader || scrollTop < 50 && !isMiniHeader) return
+        if (scrollTop > 50) {
+            setIsMiniHeader(true)
+            props.toggleMiniHeader(true)
+        } else {
+            setIsMiniHeader(false)
+            props.toggleMiniHeader(false)
+        }
+    }
 
     return (
         <header>
-            <section className="header-container">
+            <section className={isMiniHeader ? "header-container mini-header" : "header-container"}>
                 <div className="logo-container">
                     <h1>LOGO</h1>
                 </div>
@@ -34,3 +59,19 @@ export function Header() {
         </header >
     )
 }
+
+function mapStateToProps(state) {
+    return {
+        isMiniHeader: state.headerModule.isMiniHeader
+    }
+}
+
+
+const mapDispatchToProps = {
+    toggleMiniHeader
+}
+
+export const Header = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(_Header)

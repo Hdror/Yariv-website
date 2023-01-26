@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter as Router } from 'react-router-dom';
-import './assets/styles/styles.scss';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { RootCmp } from './root-cmp';
+import { Provider } from 'react-redux';
+import { store } from './store/store'
+import './assets/styles/styles.scss';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <RootCmp />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <RootCmp />
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
 
-
-reportWebVitals();

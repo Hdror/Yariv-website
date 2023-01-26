@@ -36,3 +36,12 @@ h6 {
         pointer-events: all;
     }
 }
+
+.app-container{
+    transition: ease-out .6s;
+    margin-top: 141px;
+    &.mini-header-mode{
+        transition: ease-out .6s;
+        margin-top: 0px;
+    }
+}

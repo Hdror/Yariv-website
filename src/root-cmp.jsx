@@ -1,21 +1,24 @@
 import { Routes, Route } from 'react-router'
-import { Header } from './cmps/header'
 import routes from './routes'
+import { connect } from 'react-redux'
+
 import { React, useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { toggleMiniHeader } from './store/header/header.actions'
+import { Header } from './cmps/header'
 
 
-export const RootCmp = () => {
+export const _RootCmp = (props) => {
 
     const routeLocation = useLocation()
     useEffect(() => {
-        document.title = `YK-Photo-${routeLocation.pathname.substring(1,routeLocation.pathname.length)}`
+        document.title = `YK-Photo-${routeLocation.pathname.substring(1, routeLocation.pathname.length)}`
     }, [routeLocation.pathname])
 
     return (
         <>
             <Header />
-            <div className="app-container">
+            <div className={props.isMiniHeader ? "app-container mini-header-mode" : "app-container"}>
                 <Routes>
                     {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                 </Routes>
@@ -23,3 +26,19 @@ export const RootCmp = () => {
         </>
     )
 }
+
+
+function mapStateToProps(state) {
+    return {
+        isMiniHeader: state.headerModule.isMiniHeader
+    }
+}
+
+const mapDispatchToProps = {
+    toggleMiniHeader
+}
+
+export const RootCmp = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(_RootCmp)

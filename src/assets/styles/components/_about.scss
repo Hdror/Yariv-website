@@ -1,9 +1,10 @@
 article{
-    display: flex;
     align-items: center;
+    display: grid;
     background-color: black;
+    grid-template-columns: repeat(2,minmax(100px,1fr));
+    grid-gap: 20px;
     padding: 40px;
-    gap: 20px;
     .text-container{
         color: white;
     }
