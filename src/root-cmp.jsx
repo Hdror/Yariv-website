@@ -20,7 +20,7 @@ export const _RootCmp = (props) => {
             <Header />
             <div className={props.isMiniHeader ? "app-container mini-header-mode" : "app-container"}>
                 <Routes>
-                    {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
+                    {routes.map(route => <Route key={route.path}  element={route.component} path={route.path} />)}
                 </Routes>
             </div>
         </>

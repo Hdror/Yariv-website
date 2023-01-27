@@ -1,11 +1,19 @@
 article{
     align-items: center;
     display: grid;
-    background-color: black;
+    // background-color: rgb(248, 241, 241);
     grid-template-columns: repeat(2,minmax(100px,1fr));
+    grid-template-rows:  minmax(100px,600px);
     grid-gap: 20px;
     padding: 40px;
     .text-container{
-        color: white;
+        color: $clr8;
+    }
+    .image-container{
+        height: 100%;
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }

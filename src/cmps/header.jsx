@@ -11,7 +11,7 @@ export const _Header = (props) => {
     useEffect(() => {
         window.addEventListener("scroll", checkScrollY)
         return () => {
-            window.removeEventListener("scroll", checkScrollY); console.log('sdsds');
+            window.removeEventListener("scroll", checkScrollY);
         }
     })
 
